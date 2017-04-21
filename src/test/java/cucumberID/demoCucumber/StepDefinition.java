@@ -22,15 +22,20 @@ public class StepDefinition {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
-	@When("^I enter username as \"([^\"]*)\"$")
-	public void i_enter_username_as(String userName) throws Throwable {
-		driver.findElement(By.id("email")).sendKeys(userName);
-
+	@When("^I enter username as firstUser$")
+	public void i_enter_username_as_firstUser() throws Throwable {
+		driver.findElement(By.id("email")).sendKeys("firstUser");
 	}
 
-	@When("^I enter password as \"([^\"]*)\"$")
-	public void i_enter_password_as(String pass) throws Throwable {
-		driver.findElement(By.id("pass")).sendKeys(pass);
+	@When("^I enter username as secondUser$")
+	public void i_enter_username_as_secondUser() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.id("email")).sendKeys("secondUser");
+	}
+
+	@When("^I enter password as password$")
+	public void i_enter_password_as_password() throws Throwable {
+		driver.findElement(By.id("pass")).sendKeys("password");
 	}
 
 	@When("^I click Login button$")
@@ -52,7 +57,7 @@ public class StepDefinition {
 		} else {
 			System.out.println("Test Failed");
 		}
-		//driver.quit();
+		// driver.quit();
 	}
 
 }
